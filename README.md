@@ -1,7 +1,7 @@
 # Cloud Parking
 
 ## ☁ Sobre o projeto
-Conjunto de API’s utilizando Spring Boot para controlar um estacionamento de veículos como Desafio de Projeto na [Digital Innovation One](https://www.dio.me/).
+API utilizando Spring Boot para controlar um estacionamento de veículos como Desafio de Projeto na [Digital Innovation One](https://www.dio.me/).
 
 ## 💻 Tecnologias
 ![Java](https://img.shields.io/badge/Java-000?style=for-the-badge&logo=java&logoColor=7520FF)
