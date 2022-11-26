@@ -27,7 +27,7 @@ public class ParkingController {
     }
 
     @GetMapping
-    @ApiOperation("Find All")
+    @ApiOperation("Find All Parked Vehicles")
     public ResponseEntity<List<ParkingDTO>> findAll() {
         List<Parking> parkingList = parkingService.findAll();
         List<ParkingDTO> result = parkingMapper.toParkingDTOList(parkingList);
@@ -35,7 +35,7 @@ public class ParkingController {
     }
 
     @GetMapping("/{id}")
-    @ApiOperation("Find by ID")
+    @ApiOperation("Find Vehicle by ID")
     public ResponseEntity<ParkingDTO> findById(@PathVariable String id) {
         Parking parking = parkingService.findById(id);
         ParkingDTO result = parkingMapper.toParkingDTO(parking);
@@ -43,14 +43,14 @@ public class ParkingController {
     }
 
     @DeleteMapping("/{id}")
-    @ApiOperation("Delete by ID")
+    @ApiOperation("Delete Vehicle by ID")
     public ResponseEntity delete(@PathVariable String id) {
         parkingService.delete(id);
         return ResponseEntity.noContent().build();
     }
 
     @PostMapping
-    @ApiOperation("Create")
+    @ApiOperation("Create - Insert New Vehicle")
     public ResponseEntity<ParkingDTO> create(@RequestBody ParkingCreateDTO dto) {
         var parkingCreate = parkingMapper.toParkingCreate(dto);
         var parking = parkingService.create(parkingCreate);
@@ -59,12 +59,19 @@ public class ParkingController {
     }
 
     @PutMapping("/{id}")
-    @ApiOperation("Update")
+    @ApiOperation("Update Vehicle by ID")
     public ResponseEntity<ParkingDTO> update(@PathVariable String id, @RequestBody ParkingCreateDTO dto) {
         var parkingCreate = parkingMapper.toParkingCreate(dto);
         var parking = parkingService.update(id, parkingCreate);
         var result = parkingMapper.toParkingDTO(parking);
         return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
+    @PostMapping("/{id}/exit")
+    @ApiOperation("Vehicle Checkout")
+    public ResponseEntity<ParkingDTO> checkOut(@PathVariable String id) {
+        Parking parking = parkingService.checkOut(id);
+        return ResponseEntity.ok(parkingMapper.toParkingDTO(parking));
     }
 
 }
