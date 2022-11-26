@@ -20,10 +20,10 @@ spring:
         show-sql: true
         defer-datasource-initialization: true
         database-platform: org.hibernate.dialect.H2Dialect
-    security:
-        user:
-            name: admin
-            password: admin
+    #security:
+        #user:
+            #name: admin
+            #password: admin
     mvc:
         pathmatch:
             matching-strategy: ant_path_matcher
