@@ -10,7 +10,7 @@ Conjunto de API’s utilizando Spring Boot para controlar um estacionamento de v
 - [x] Deletar veículo;
 - [x] Checkout veículo.
 
-## Tecnologias
+## 💻 Tecnologias
 ![Java](https://img.shields.io/badge/Java-000?style=for-the-badge&logo=java&logoColor=7520FF)
 ![Spring](https://img.shields.io/badge/Spring-000?style=for-the-badge&logo=spring&logoColor=7520FF)
 ![Maven](https://img.shields.io/badge/Maven-000?style=for-the-badge&logo=apache-maven&logoColor=7520FF)
