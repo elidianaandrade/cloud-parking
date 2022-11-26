@@ -1,5 +1,9 @@
 server:
     port: 8080
+    error:
+        include-exceptions: false
+        include-stacktrace: never
+        include-message: always
 spring:
     mvc:
         pathmatch:
